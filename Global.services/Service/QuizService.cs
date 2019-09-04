@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Global.Data.IDAO;
 using Global.Data.DAO;
 using Global.Data;
-using Global.services.Iservice;
-namespace Global.services.Service
+using Global.Services.IService;
+namespace Global.Services.Service
 {
     public class QuizService : IQuizService
     {
