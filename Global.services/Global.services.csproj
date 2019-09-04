@@ -105,9 +105,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Iservice\IContentService.cs" />
+    <Compile Include="Iservice\IQuizService.cs" />
     <Compile Include="Iservice\Iuserservice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ContentService.cs" />
+    <Compile Include="Service\QuizService.cs" />
     <Compile Include="Service\userservice.cs" />
   </ItemGroup>
   <ItemGroup>
