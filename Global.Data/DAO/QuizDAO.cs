@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Global.Data.IDAO;
+
 namespace Global.Data.DAO
 {
     public class QuizDAO : IQuizDAO

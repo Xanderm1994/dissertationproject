@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Global.Data;
-namespace Global.services.Iservice
+
+namespace Global.Services.IService
 {
-   public  interface Iuserservice 
+   public interface IUserService 
     {
         IList<AspNetUser> Getusers();
     }

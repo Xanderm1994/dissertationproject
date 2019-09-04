@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using Global.Data;
 using Global.Data.IDAO;
 using Global.Data.DAO;
-using Global.services.Iservice;
-namespace Global.services.Service
+using Global.Services.IService;
+
+namespace Global.Services.Service
 {
-    public class contentservice : IContentService
+    public class ContentService : IContentService
     {
         private IContentDAO _contentdao;
 
-        public contentservice()
+        public ContentService()
         {
             _contentdao = new ContentDAO();
         }
@@ -26,6 +27,5 @@ namespace Global.services.Service
         {
              _contentdao.CreateContent(content);
         }
-
     }
 }

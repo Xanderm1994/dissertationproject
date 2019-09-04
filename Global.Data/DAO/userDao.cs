@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Global.Data.IDAO;
+
 namespace Global.Data.DAO
 {
-    public class userDao : IuserDao
+    public class UserDAO : IUserDao
     {
         private GwEntities _Database;
-        public userDao()
+        public UserDAO()
         {
             _Database = new GwEntities();
         }

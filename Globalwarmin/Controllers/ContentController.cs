@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Global.services.Iservice;
-using Global.services.Service;
+using Global.Services.IService;
+using Global.Services.Service;
 using Global.Data;
+
 namespace Globalwarmin.Controllers
 {
     public class ContentController : Controller
@@ -14,7 +15,7 @@ namespace Globalwarmin.Controllers
 
         public ContentController()
         {
-            _ContentService = new contentservice();
+            _ContentService = new ContentService();
         }
         public ActionResult Index()
         {

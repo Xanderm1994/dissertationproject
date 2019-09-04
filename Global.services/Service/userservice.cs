@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 using Global.Data;
 using Global.Data.IDAO;
 using Global.Data.DAO;
-using Global.services.Iservice;
-namespace Global.services.Service
-{
-    public class userservice : Iuserservice
-    {
-        private IuserDao _userdao;
+using Global.Services.IService;
 
-        public userservice()
+namespace Global.Services.Service
+{
+    public class UserService : IUserService
+    {
+        private IUserDao _userdao;
+
+        public UserService()
         {
-            _userdao = new userDao();
+            _userdao = new UserDAO();
         }
 
         public IList<AspNetUser> Getusers()

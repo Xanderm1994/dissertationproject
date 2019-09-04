@@ -7,10 +7,8 @@ using Global.Data;
 
 namespace Global.Data.IDAO
 {
-    public interface IUserDao
+    public interface IQuestionDAO
     {
-        IList<AspNetUser> GetUsers();
-
-
+        IList<Question> GetAllQuestions();
     }
 }

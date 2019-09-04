@@ -5,12 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Global.Data;
 
-namespace Global.Data.IDAO
+namespace Global.Services.IService
 {
-    public interface IUserDao
+    public interface IQuestionService
     {
-        IList<AspNetUser> GetUsers();
-
-
+        IList<Question> GetAllQuestions();
     }
 }
