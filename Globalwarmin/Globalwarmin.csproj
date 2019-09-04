@@ -257,6 +257,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InitAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
