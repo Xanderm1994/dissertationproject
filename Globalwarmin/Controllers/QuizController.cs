@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Global.Data;
-using Global.services.Iservice;
-using Global.services.Service;
+using Global.Services.IService;
+using Global.Services.Service;
 
 namespace Globalwarmin.Controllers
 {
