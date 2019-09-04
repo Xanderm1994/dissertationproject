@@ -22,5 +22,10 @@ namespace Global.Services.Service
         {
             return _quizDAO.GetQuizs();
         }
+
+       public void CreateQuiz(Quiz _quiz)
+        {
+            _quizDAO.CreateQuiz(_quiz);
+        }
     }
 }
