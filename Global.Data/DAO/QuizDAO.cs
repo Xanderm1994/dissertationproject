@@ -21,7 +21,7 @@ namespace Global.Data.DAO
             IQueryable<Quiz> _Quiz;
 
             _Quiz = from quiz in _Database.Quizs select quiz;
-            return _Quiz.ToList<Quiz>();
+            return _Quiz.ToList();
         }
     }
 }
