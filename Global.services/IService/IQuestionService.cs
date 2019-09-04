@@ -10,5 +10,7 @@ namespace Global.Services.IService
     public interface IQuestionService
     {
         IList<Question> GetAllQuestions();
+
+        void CreateQuestion(Question _question);
     }
 }

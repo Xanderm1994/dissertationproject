@@ -10,5 +10,7 @@ namespace Global.Data.IDAO
     public interface IQuestionDAO
     {
         IList<Question> GetAllQuestions();
+
+        void CreateQuestion(Question _question);
     }
 }

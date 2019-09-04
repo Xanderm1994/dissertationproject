@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Global.Data.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<iframe name="Framename" src="http://www.allwebco-templates.com/support/" width="550" height="550" frameborder="0" scrolling="yes" style="width: 100%;"> </iframe>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RightAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WrongAnswers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RightFeedback)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WrongFeedback)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RightAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WrongAnswers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RightFeedback)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WrongFeedback)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.QuestionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.QuestionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.QuestionId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -25,6 +25,13 @@ namespace Global.Data.DAO
             return questions.ToList();
         }
 
+        public void CreateQuestion(Question _question)
+        {
+            _database.Questions.Add(_question);
+            _database.SaveChanges();
+        }
+
+
 
     }
 }

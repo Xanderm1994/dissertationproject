@@ -24,6 +24,10 @@ namespace Global.Services.Service
             return _questionDAO.GetAllQuestions();
         }
 
+        public void CreateQuestion(Question _question)
+        {
+            _questionDAO.CreateQuestion(_question);
+        }
 
 
     }

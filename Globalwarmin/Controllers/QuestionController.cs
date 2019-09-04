@@ -3,15 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Global.Data;
+using Global.Services.IService;
+using Global.Services.Service;
 
 namespace Globalwarmin.Controllers
 {
     public class QuestionController : Controller
     {
+        IQuestionService _questionService;
+
+        public QuestionController()
+        {
+            _questionService = new QuestionService();
+        }
+
+
         // GET: Question
         public ActionResult Index()
         {
-            return View();
+            IList<Question> questions = _questionService.GetAllQuestions();
+            return View(questions);
         }
 
         // GET: Question/Details/5
@@ -28,12 +40,11 @@ namespace Globalwarmin.Controllers
 
         // POST: Question/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Question _question)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _questionService.CreateQuestion(_question);
                 return RedirectToAction("Index");
             }
             catch
