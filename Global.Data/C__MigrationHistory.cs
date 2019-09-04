@@ -12,15 +12,11 @@ namespace Global.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Score
+    public partial class C__MigrationHistory
     {
-        public int ScoreID { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public int Score1 { get; set; }
-        public int quizid { get; set; }
-        public string UserId { get; set; }
-    
-        public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Quiz Quiz { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }

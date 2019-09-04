@@ -120,73 +120,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Content.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\ContentDAO.cs" />
+    <Compile Include="DAO\QuizDAO.cs" />
     <Compile Include="DAO\userDao.cs" />
-    <Compile Include="GlobalDataModel.Context.cs">
+    <Compile Include="Gentities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalDataModel.Context.tt</DependentUpon>
+      <DependentUpon>Gentities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="GlobalDataModel.cs">
+    <Compile Include="Gentities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
-    <Compile Include="GlobalDataModel.Designer.cs">
+    <Compile Include="Gentities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalDataModel.edmx</DependentUpon>
+      <DependentUpon>Gentities.edmx</DependentUpon>
     </Compile>
     <Compile Include="IDAO\IContentDAO.cs" />
+    <Compile Include="IDAO\IQuizDAO.cs" />
     <Compile Include="IDAO\IuserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
     <Compile Include="Quiz.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
     <Compile Include="QuizContentLink.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
     <Compile Include="Score.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Table.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>GlobalDataModel.tt</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Gentities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EntityDeploy Include="GlobalDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GlobalDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Content Include="Gentities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Gentities.edmx</DependentUpon>
+      <LastGenOutput>Gentities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Gentities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Gentities.edmx</DependentUpon>
+      <LastGenOutput>Gentities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="GlobalDataModel.edmx.diagram">
-      <DependentUpon>GlobalDataModel.edmx</DependentUpon>
+    <EntityDeploy Include="Gentities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Gentities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Gentities.edmx.diagram">
+      <DependentUpon>Gentities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GlobalDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GlobalDataModel.Context.cs</LastGenOutput>
-      <DependentUpon>GlobalDataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="GlobalDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GlobalDataModel.edmx</DependentUpon>
-      <LastGenOutput>GlobalDataModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

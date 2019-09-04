@@ -17,7 +17,7 @@ namespace Global.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Content()
         {
-            this.QuizContentLink = new HashSet<QuizContentLink>();
+            this.QuizContentLinks = new HashSet<QuizContentLink>();
         }
     
         public int ContentId { get; set; }
@@ -26,6 +26,6 @@ namespace Global.Data
         public string ContentType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QuizContentLink> QuizContentLink { get; set; }
+        public virtual ICollection<QuizContentLink> QuizContentLinks { get; set; }
     }
 }

@@ -8,11 +8,11 @@ namespace Global.Data.DAO
 {
     public class ContentDAO : IContentDAO
     {
-        private GlobalEntities _Database;
+        private GwEntities _Database;
 
         public ContentDAO()
         {
-            _Database = new GlobalEntities();
+            _Database = new GwEntities();
 
         }
 
@@ -20,12 +20,12 @@ namespace Global.Data.DAO
         {
             IQueryable<Content> _content;
 
-            _content = from content in _Database.Content select content;
+            _content = from content in _Database.Contents select content;
             return _content.ToList<Content>();
         }
         public void CreateContent(Content _content)
         {
-            _Database.Content.Add(_content);
+            _Database.Contents.Add(_content);
             _Database.SaveChanges();
         }
 

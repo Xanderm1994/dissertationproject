@@ -18,7 +18,7 @@ namespace Global.services.Service
             _userdao = new userDao();
         }
 
-        public IList<User> Getusers()
+        public IList<AspNetUser> Getusers()
         {
             return _userdao.GetUsers();
         }

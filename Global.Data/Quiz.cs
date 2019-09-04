@@ -17,19 +17,19 @@ namespace Global.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Quiz()
         {
-            this.Question = new HashSet<Question>();
-            this.QuizContentLink = new HashSet<QuizContentLink>();
-            this.Score = new HashSet<Score>();
+            this.Questions = new HashSet<Question>();
+            this.QuizContentLinks = new HashSet<QuizContentLink>();
+            this.Scores = new HashSet<Score>();
         }
     
         public int QuizID { get; set; }
         public string Title { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Question> Question { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QuizContentLink> QuizContentLink { get; set; }
+        public virtual ICollection<QuizContentLink> QuizContentLinks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Score> Score { get; set; }
+        public virtual ICollection<Score> Scores { get; set; }
     }
 }

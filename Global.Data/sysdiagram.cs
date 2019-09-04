@@ -12,14 +12,12 @@ namespace Global.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Table
+    public partial class sysdiagram
     {
-        public int ScoredID { get; set; }
-        public int UserId { get; set; }
-        public int QuizID { get; set; }
-        public System.DateTime DateTime { get; set; }
-        public int Score { get; set; }
-    
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

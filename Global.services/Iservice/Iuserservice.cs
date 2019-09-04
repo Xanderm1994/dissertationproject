@@ -8,6 +8,6 @@ namespace Global.services.Iservice
 {
    public  interface Iuserservice 
     {
-        IList<User> Getusers();
+        IList<AspNetUser> Getusers();
     }
 }

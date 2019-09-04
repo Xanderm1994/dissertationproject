@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model '\\studenthome.hallam.shu.ac.uk\STUDENTHOME5\7\b2023507\MyWork\Dissertation quiz\Globalwarmin\Global.Data\GlobalDataModel.edmx'. 
+﻿// T4 code generation is enabled for model '\\studenthome.hallam.shu.ac.uk\STUDENTHOME5\7\b2023507\MyWork\Dissertation quiz\dissertationproject\Global.Data\Gentities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 using Global.Data.IDAO;
 namespace Global.Data.DAO
 {
-    public class userDao : IuserDao
+    public class QuizDAO : IQuizDAO
     {
         private GwEntities _Database;
-        public userDao()
+        public QuizDAO()
         {
             _Database = new GwEntities();
         }
 
 
-        public IList<AspNetUser> GetUsers()
+        public IList<Quiz> GetQuizs()
         {
-            IQueryable<AspNetUser> _users;
+            IQueryable<Quiz> _Quiz;
 
-            _users = from user in _Database.AspNetUsers select user;
-            return _users.ToList<AspNetUser>();
+            _Quiz = from quiz in _Database.Quizs select quiz;
+            return _Quiz.ToList<Quiz>();
         }
     }
 }
