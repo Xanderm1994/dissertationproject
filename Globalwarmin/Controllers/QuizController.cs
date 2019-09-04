@@ -37,12 +37,11 @@ namespace Globalwarmin.Controllers
 
         // POST: Quiz/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Quiz _quiz)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _QuizService.CreateQuiz(_quiz);
                 return RedirectToAction("Index");
             }
             catch

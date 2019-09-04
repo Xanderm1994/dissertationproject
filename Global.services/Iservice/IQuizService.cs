@@ -9,5 +9,7 @@ namespace Global.Services.IService
    public interface IQuizService
     {
         IList<Quiz> GetQuizs();
+
+        void CreateQuiz(Quiz _quiz);
     }
 }

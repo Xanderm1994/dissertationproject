@@ -9,5 +9,7 @@ namespace Global.Data.IDAO
    public interface IQuizDAO
     {
         IList<Quiz> GetQuizs();
+
+        void CreateQuiz(Quiz _quiz);
     }
 }

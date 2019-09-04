@@ -23,5 +23,10 @@ namespace Global.Data.DAO
             _Quiz = from quiz in _Database.Quizs select quiz;
             return _Quiz.ToList();
         }
+       public void CreateQuiz(Quiz _quiz)
+        {
+            _Database.Quizs.Add(_quiz);
+            _Database.SaveChanges();
+        }
     }
 }
