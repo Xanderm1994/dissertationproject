@@ -20,7 +20,8 @@ namespace Globalwarmin.Controllers
         // GET: Quiz
         public ActionResult Index()
         {
-            return View();
+            IList<Quiz> allquiz =  _QuizService.GetQuizs();
+            return View(allquiz);
         }
 
         // GET: Quiz/Details/5

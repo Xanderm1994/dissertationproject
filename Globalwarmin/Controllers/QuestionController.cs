@@ -96,5 +96,58 @@ namespace Globalwarmin.Controllers
                 return View();
             }
         }
+        public ActionResult AskQuestion(int id)
+        {
+            if (Session["CurrentScore"] == null)
+            {
+                Session["CurrentScore"] = 0;
+            }
+
+            Question question = _questionService.GetQuestionById(id);
+            return View(question);
+        }
+
+        public ActionResult AnswerQuestion(int thisquestionid, string clickedanswer)
+        {
+            Question thisquestion = _questionService.GetQuestionById(thisquestionid);
+
+            if (thisquestion.RightAnswer == clickedanswer)
+            {
+                int currentscore = (int)Session["CurrentScore"];
+                currentscore += thisquestion.Score;
+                Session["CurrentScore"] = currentscore;
+                return View("success", thisquestion);
+            }
+            else
+            {
+                return View("wrong", thisquestion);
+            }
+        }
+        public ActionResult GetQuestionsForQuizId(int id)
+        {
+            IList<int> questionsids = _questionService.GetQuestionByQuizId(id);
+            int nextquestion = questionsids[0];
+            questionsids.RemoveAt(0);
+            Session["questionstoask"] = questionsids;
+            return RedirectToAction("AskQuestion", new { id = nextquestion });
+
+        }
+        public ActionResult NextQuestion()
+        {
+            IList<int> questionsids = (IList<int>)Session["questionstoask"];
+            try
+            {
+                int nextquestion = questionsids[0];
+                questionsids.RemoveAt(0);
+                Session["questionstoask"] = questionsids;
+                return RedirectToAction("AskQuestion", new { id = nextquestion });
+            }
+            catch
+            {
+                int finalscore = (int)Session["CurrentScore"];
+                Session.Abandon();
+                return View("Endofquiz", finalscore);
+            }
+        }
     }
 }

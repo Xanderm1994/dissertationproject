@@ -19,9 +19,7 @@ namespace Global.Data.DAO
         public IList<Question> GetAllQuestions()
         {
             IEnumerable<Question> questions;
-
             questions = from question in _database.Questions select question;
-
             return questions.ToList();
         }
 
@@ -31,7 +29,19 @@ namespace Global.Data.DAO
             _database.SaveChanges();
         }
 
+        public Question GetQuestionById(int id)
+        {
+            IQueryable<Question> question;
+            question = from dbquestion in _database.Questions where dbquestion.QuestionId == id select dbquestion;
+            return question.First();
+        }
 
+        public IList<int> GetQuestionByQuizId(int id)
+        {
+            IQueryable<int> questions;
+            questions = from dbquestion in _database.Questions where dbquestion.QuizId == id select dbquestion.QuestionId;
+            return questions.ToList();
+        }
 
     }
 }

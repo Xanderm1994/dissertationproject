@@ -1,0 +1,10 @@
+﻿@model Global.Data.Question
+
+@{
+    ViewBag.Title = "wrong";
+}
+
+<h2>wrong</h2>
+<h3>@Model.WrongFeedback</h3>
+<a href="@Url.Action("NextQuestion", "Question")">Next Question</a>
+

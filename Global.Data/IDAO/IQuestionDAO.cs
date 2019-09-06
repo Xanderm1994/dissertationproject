@@ -12,5 +12,9 @@ namespace Global.Data.IDAO
         IList<Question> GetAllQuestions();
 
         void CreateQuestion(Question _question);
+
+        Question GetQuestionById(int id);
+
+        IList<int> GetQuestionByQuizId(int id);
     }
 }

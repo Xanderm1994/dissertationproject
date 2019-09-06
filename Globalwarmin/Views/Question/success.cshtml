@@ -1,0 +1,10 @@
+﻿@model Global.Data.Question
+@{
+    ViewBag.Title = "success";
+}
+
+<h2>success</h2>
+<h3>@Model.RightFeedback</h3>
+<h4>You scored @Model.Score points</h4>
+<a href="@Url.Action("NextQuestion", "Question")">Next Question</a>
+

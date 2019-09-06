@@ -1,0 +1,20 @@
+﻿@model Global.Data.Question
+
+@{
+    ViewBag.Title = "AskQuestion";
+    List<string> answers = new List<string>();
+    answers.AddRange(Model.WrongAnswers.Split(','));
+    answers.Add(Model.RightAnswer);
+}
+
+<h2>@Model.QuestionText</h2>
+
+<div>
+
+    @foreach(string a in answers)
+    {
+        <a href="@Url.Action("AnswerQuestion", "Question" , new { thisquestionid = Model.QuestionId, clickedanswer = a })">@a</a>
+        <br />
+    }
+    <hr />
+</div>

@@ -29,6 +29,14 @@ namespace Global.Services.Service
             _questionDAO.CreateQuestion(_question);
         }
 
+        public Question GetQuestionById(int id)
+        {
+            return _questionDAO.GetQuestionById(id);
+        }
 
+        public IList<int> GetQuestionByQuizId(int id)
+        {
+            return _questionDAO.GetQuestionByQuizId(id);
+        }
     }
 }

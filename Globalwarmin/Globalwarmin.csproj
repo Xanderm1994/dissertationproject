@@ -350,6 +350,11 @@
     <Content Include="Views\Quiz\Create.cshtml" />
     <Content Include="Views\Question\Create.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\AskQuestion.cshtml" />
+    <Content Include="Views\Question\success.cshtml" />
+    <Content Include="Views\Question\wrong.cshtml" />
+    <Content Include="Views\Question\Endofquiz.cshtml" />
+    <Content Include="Views\Quiz\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
