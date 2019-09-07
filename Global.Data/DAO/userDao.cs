@@ -23,5 +23,16 @@ namespace Global.Data.DAO
             _users = from user in _Database.AspNetUsers select user;
             return _users.ToList<AspNetUser>();
         }
+        public string GetUserIdForUserName(string username)
+        {
+            IQueryable<string> userid;
+
+            userid = from user 
+                     in _Database.AspNetUsers
+                     where user.UserName == username
+                     select user.Id;
+            return userid.First();
+
+        }
     }
 }

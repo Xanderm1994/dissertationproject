@@ -141,6 +141,7 @@
     <Compile Include="DAO\ContentDAO.cs" />
     <Compile Include="DAO\QuestionDAO.cs" />
     <Compile Include="DAO\QuizDAO.cs" />
+    <Compile Include="DAO\ScoreDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Gentities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -160,6 +161,7 @@
     <Compile Include="IDAO\IContentDAO.cs" />
     <Compile Include="IDAO\IQuestionDAO.cs" />
     <Compile Include="IDAO\IQuizDAO.cs" />
+    <Compile Include="IDAO\IScoreDAO.cs" />
     <Compile Include="IDAO\IUserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">

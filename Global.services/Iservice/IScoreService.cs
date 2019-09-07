@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Global.Data;
 
-namespace Global.Data.IDAO
-{
-    public interface IUserDao
-    {
-        IList<AspNetUser> GetUsers();
 
-        string GetUserIdForUserName(string username);
+namespace Global.Services.IService
+{
+   public interface IScoreService
+    {
+        void createscore(Score newscore);
     }
 }
