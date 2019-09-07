@@ -42,15 +42,14 @@ namespace Globalwarmin.Controllers
         [HttpPost]
         public ActionResult Create(Question _question)
         {
-            try
+            if (ModelState.IsValid)
             {
+                int questionId = _questionService.GetNextID();
+                _question.QuestionId = questionId;
                 _questionService.CreateQuestion(_question);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(_question);
         }
 
         // GET: Question/Edit/5

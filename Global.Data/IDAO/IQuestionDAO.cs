@@ -16,5 +16,8 @@ namespace Global.Data.IDAO
         Question GetQuestionById(int id);
 
         IList<int> GetQuestionByQuizId(int id);
+
+        int GetNextID();
+
     }
 }
