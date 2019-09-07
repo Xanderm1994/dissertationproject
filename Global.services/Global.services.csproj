@@ -107,11 +107,13 @@
     <Compile Include="IService\IContentService.cs" />
     <Compile Include="IService\IQuestionService.cs" />
     <Compile Include="IService\IQuizService.cs" />
+    <Compile Include="IService\IScoreService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ContentService.cs" />
     <Compile Include="Service\QuestionService.cs" />
     <Compile Include="Service\QuizService.cs" />
+    <Compile Include="Service\ScoreService.cs" />
     <Compile Include="Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
