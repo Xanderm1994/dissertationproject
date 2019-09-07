@@ -27,5 +27,13 @@ namespace Global.Services.Service
         {
              _contentdao.CreateContent(content);
         }
+        public IList<Content> GetContentAz()
+        {
+            return _contentdao.GetContentAz();
+        }
+        public Content GetContentById(int id)
+        {
+            return _contentdao.GetContentById(id);
+        }
     }
 }

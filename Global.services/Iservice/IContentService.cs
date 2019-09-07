@@ -11,5 +11,7 @@ namespace Global.Services.IService
     {
         IList<Content> GetContents();
         void CreateContent(Content content);
+        IList<Content> GetContentAz();
+        Content GetContentById(int id);
     }
 }

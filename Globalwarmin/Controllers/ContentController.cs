@@ -98,5 +98,18 @@ namespace Globalwarmin.Controllers
                 return View();
             }
         }
+
+        public ActionResult TopicList()
+        {
+            IList<Content> content;
+           content = _ContentService.GetContentAz();
+            return View(content);
+        }
+        public ActionResult ViewContent(int id)
+        {
+            Content content; 
+            content = _ContentService.GetContentById(id);
+            return View(content);
+        }
     }
 }

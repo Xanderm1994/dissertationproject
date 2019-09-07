@@ -1,0 +1,10 @@
+﻿@model Global.Data.Content
+
+@{
+    ViewBag.Title = "ViewContent";
+}
+
+<h2>@Model.Title</h2>
+<h4>@Model.ContentType</h4>
+<hr />
+<iframe name="maincontent"src=@Model.Url width="800" height="500" frameborder="0" scrolling="auto"></iframe>
