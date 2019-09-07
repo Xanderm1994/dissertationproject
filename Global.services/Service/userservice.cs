@@ -23,7 +23,12 @@ namespace Global.Services.Service
         {
             return _userdao.GetUsers();
         }
+        public string GetUserIdForUserName(string username)
+        {
+            string userid = _userdao.GetUserIdForUserName(username);
 
+            return userid;
+        }
 
     }
 }

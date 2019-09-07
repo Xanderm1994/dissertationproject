@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Windows;
 using System.Web.Mvc;
 using Global.Data;
 using Global.Services.IService;
@@ -12,10 +13,13 @@ namespace Globalwarmin.Controllers
     public class QuestionController : Controller
     {
         IQuestionService _questionService;
-
+        IUserService _userService;
+        IScoreService _scoreService;
         public QuestionController()
         {
             _questionService = new QuestionService();
+            _userService = new UserService();
+            _scoreService = new ScoreService();
         }
 
 
@@ -129,6 +133,7 @@ namespace Globalwarmin.Controllers
             int nextquestion = questionsids[0];
             questionsids.RemoveAt(0);
             Session["questionstoask"] = questionsids;
+            Session["quizid"] = id;
             return RedirectToAction("AskQuestion", new { id = nextquestion });
 
         }
@@ -146,6 +151,17 @@ namespace Globalwarmin.Controllers
             {
                 int finalscore = (int)Session["CurrentScore"];
                 Session.Abandon();
+                string Username = User.Identity.Name;
+                string userid = _userService.GetUserIdForUserName(Username);
+                int quizid = (int)Session["quizid"];
+
+                Score NewScore = new Score();
+                NewScore.DateTime = DateTime.Now;
+                NewScore.Score1 = finalscore;
+                NewScore.quizid = quizid;
+                NewScore.UserId = userid;
+                _scoreService.createscore(NewScore);
+
                 return View("Endofquiz", finalscore);
             }
         }

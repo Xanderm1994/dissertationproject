@@ -10,5 +10,8 @@ namespace Global.Services.IService
    public interface IUserService 
     {
         IList<AspNetUser> Getusers();
+
+        string GetUserIdForUserName(string username);
+
     }
 }

@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Global.Data;
 
 namespace Global.Data.IDAO
 {
-    public interface IUserDao
+   public interface IScoreDAO
     {
-        IList<AspNetUser> GetUsers();
-
-        string GetUserIdForUserName(string username);
+        void createscore(Score newscore);
     }
 }
