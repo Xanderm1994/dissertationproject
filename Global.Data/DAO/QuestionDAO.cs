@@ -43,5 +43,11 @@ namespace Global.Data.DAO
             return questions.ToList();
         }
 
+        public int GetNextID()
+        {
+            IQueryable<int> id;
+            id = from dbquestion in _database.Questions orderby dbquestion.QuestionId descending select dbquestion.QuestionId;
+            return (id.First())+1;
+        }
     }
 }

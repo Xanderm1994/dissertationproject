@@ -38,5 +38,11 @@ namespace Global.Services.Service
         {
             return _questionDAO.GetQuestionByQuizId(id);
         }
+
+        public int GetNextID()
+        {
+            return _questionDAO.GetNextID();
+        }
+
     }
 }
