@@ -19,7 +19,6 @@ namespace Global.Data.DAO
         public IList<Content> GetContents()
         {
             IQueryable<Content> _content;
-
             _content = from content in _Database.Contents select content;
             return _content.ToList<Content>();
         }
@@ -27,6 +26,19 @@ namespace Global.Data.DAO
         {
             _Database.Contents.Add(_content);
             _Database.SaveChanges();
+        }
+        public IList<Content> GetContentAz()
+        {
+            IQueryable<Content> _content;
+            _content = from content in _Database.Contents orderby content.Title ascending select content;
+            return _content.ToList<Content>();
+        }
+
+        public Content GetContentById(int id)
+        {
+            IQueryable<Content> _content;
+            _content = from content in _Database.Contents where content.ContentId == id select content;
+            return _content.First();
         }
 
     }

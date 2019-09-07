@@ -11,5 +11,7 @@ namespace Global.Data.IDAO
     {
         IList<Content> GetContents();
         void CreateContent(Content _content);
+        IList<Content> GetContentAz();
+        Content GetContentById(int id);
     }
 }

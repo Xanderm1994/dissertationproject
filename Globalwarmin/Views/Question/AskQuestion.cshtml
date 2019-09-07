@@ -25,7 +25,7 @@
 
     @foreach (string a in answers)
     {
-        <a href="@Url.Action("AnswerQuestion", "Question" , new { thisquestionid = Model.QuestionId, clickedanswer = a })">@a</a>
+        <a href="@Url.Action("AnswerQuestion", "Question" , new { thisquestionid = Model.QuestionId, clickedanswer = a })" class="btn btn-primary btn-lg">@a</a>
         <br />
     }
     <hr />
