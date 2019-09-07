@@ -5,13 +5,25 @@
     List<string> answers = new List<string>();
     answers.AddRange(Model.WrongAnswers.Split(','));
     answers.Add(Model.RightAnswer);
+
+    Random random = new Random();
+    int n = answers.Count;
+
+    for (int i = answers.Count - 1; i > 1; i--)
+    {
+        int rnd = random.Next(i + 1);
+
+        var value = answers[rnd];
+        answers[rnd] = answers[i];
+        answers[i] = value;
+    }
 }
 
 <h2>@Model.QuestionText</h2>
 
 <div>
 
-    @foreach(string a in answers)
+    @foreach (string a in answers)
     {
         <a href="@Url.Action("AnswerQuestion", "Question" , new { thisquestionid = Model.QuestionId, clickedanswer = a })">@a</a>
         <br />
