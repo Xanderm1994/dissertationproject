@@ -359,6 +359,12 @@
     <Content Include="Views\Content\TopicList.cshtml" />
     <Content Include="Views\Content\ViewContent.cshtml" />
     <Content Include="Views\Content\Manage.cshtml" />
+    <Content Include="Views\Quiz\Details.cshtml" />
+    <Content Include="Views\Quiz\Edit.cshtml" />
+    <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Quiz\Delete.cshtml" />
     <Content Include="Views\Content\GetQuizzesByContentId.cshtml" />
   </ItemGroup>
   <ItemGroup>

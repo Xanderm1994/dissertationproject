@@ -44,5 +44,14 @@ namespace Global.Services.Service
             return _questionDAO.GetNextID();
         }
 
+        public void UpdateQuestion(Question question)
+        {
+            _questionDAO.UpdateQuestion(question);
+        }
+
+        public void DeleteQuestion(int id)
+        {
+            _questionDAO.DeleteQuestion(id);
+        }
     }
 }

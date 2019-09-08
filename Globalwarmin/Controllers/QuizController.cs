@@ -20,14 +20,16 @@ namespace Globalwarmin.Controllers
         // GET: Quiz
         public ActionResult Index()
         {
-            IList<Quiz> allquiz =  _QuizService.GetQuizs();
+            IList<Quiz> allquiz = _QuizService.GetQuizs();
             return View(allquiz);
         }
 
         // GET: Quiz/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Quiz quiz;
+            quiz = _QuizService.GetQuizById(id);
+            return View(quiz);
         }
 
         // GET: Quiz/Create
@@ -40,59 +42,49 @@ namespace Globalwarmin.Controllers
         [HttpPost]
         public ActionResult Create(Quiz _quiz)
         {
-            try
+            if (ModelState.IsValid)
             {
                 _QuizService.CreateQuiz(_quiz);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Quiz/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Quiz quiz = _QuizService.GetQuizById(id);
+            return View(quiz);
         }
 
         // POST: Quiz/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Quiz quiz)
         {
-            try
+            if(ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                _QuizService.UpdateQuiz(quiz);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Quiz/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_QuizService.GetQuizById(id));
         }
 
         // POST: Quiz/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
-
+                _QuizService.DeleteQuiz(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
     }
 }

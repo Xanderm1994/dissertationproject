@@ -11,5 +11,11 @@ namespace Global.Services.IService
         IList<Quiz> GetQuizs();
 
         void CreateQuiz(Quiz _quiz);
+
+        Quiz GetQuizById(int id);
+
+        void UpdateQuiz(Quiz quiz);
+
+        void DeleteQuiz(int id);
     }
 }
