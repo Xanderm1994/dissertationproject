@@ -26,7 +26,7 @@
             <a href="@Url.Action("GetQuestionsForQuizId", "Question", new { id = item.QuizID })"> Take Quiz</a>
         </td>
         <td>
-            @Html.ActionLink("High Scores", "ShowHighScoresForQuizID", new { id = item.QuizID })
+            @Html.ActionLink("All High Scores", "ShowHighScoresForQuizID", new { id = item.QuizID })
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.QuizID }) |
