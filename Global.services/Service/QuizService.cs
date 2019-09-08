@@ -23,9 +23,24 @@ namespace Global.Services.Service
             return _quizDAO.GetQuizs();
         }
 
-       public void CreateQuiz(Quiz _quiz)
+        public void CreateQuiz(Quiz _quiz)
         {
             _quizDAO.CreateQuiz(_quiz);
+        }
+
+        public Quiz GetQuizById(int id)
+        {
+            return _quizDAO.GetQuizById(id);
+        }
+
+        public void UpdateQuiz(Quiz quiz)
+        {
+            _quizDAO.UpdateQuiz(quiz);
+        }
+
+        public void DeleteQuiz(int id)
+        {
+            _quizDAO.DeleteQuiz(id);
         }
     }
 }

@@ -357,6 +357,8 @@
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Content\TopicList.cshtml" />
     <Content Include="Views\Content\ViewContent.cshtml" />
+    <Content Include="Views\Quiz\Details.cshtml" />
+    <Content Include="Views\Quiz\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
