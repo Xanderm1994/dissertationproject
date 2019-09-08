@@ -126,5 +126,12 @@ namespace Globalwarmin.Controllers
             content = _ContentService.GetContentById(id);
             return View(content);
         }
+
+        public ActionResult GetQuizzesByContentId(int id)
+        {
+            IList<Quiz> contentquiz;
+            contentquiz = _ContentService.GetQuizzesByContentId(id);
+                return View(contentquiz);
+        }
     }
 }

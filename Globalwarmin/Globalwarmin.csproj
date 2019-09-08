@@ -359,6 +359,7 @@
     <Content Include="Views\Content\TopicList.cshtml" />
     <Content Include="Views\Content\ViewContent.cshtml" />
     <Content Include="Views\Content\Manage.cshtml" />
+    <Content Include="Views\Content\GetQuizzesByContentId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

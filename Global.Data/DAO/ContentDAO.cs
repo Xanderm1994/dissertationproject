@@ -65,6 +65,33 @@ namespace Global.Data.DAO
 
             return (id.First()) + 1;
         }
+        public IList<Quiz> GetQuizzesByContentId(int id)
+        {
+            IQueryable<int> quizids;
+
+            quizids = from dblink
+                 in _Database.QuizContentLinks
+                 where dblink.ContentId == id
+                 select dblink.QuizId;
+
+            IList<Quiz> quizzes = new List<Quiz>();
+            foreach(int ID in quizids)
+            {
+                quizzes.Add(getQuiz(ID));
+            }
+
+            return quizzes;
+        }
+
+        public Quiz getQuiz(int id)
+        {
+            IQueryable<Quiz> quizzes = from quz in _Database.Quizs where quz.QuizID == id select quz;
+
+            return quizzes.First();
+        }
 
     }
+
+
+
 }

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Global.Data.Quiz>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GetQuizzesByContentId";
 }
 
-<h2>Index</h2>
+<h2>GetQuizzesByContentId</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,12 +23,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            <a href="@Url.Action("GetQuestionsForQuizId", "Question", new { id = item.QuizID })"> Take Quiz</a>
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.QuizID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.QuizID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.QuizID })
+            @Html.ActionLink("Take Quiz", "GetQuestionsForQuizId","Question", new { id=item.QuizID },null)
         </td>
     </tr>
 }

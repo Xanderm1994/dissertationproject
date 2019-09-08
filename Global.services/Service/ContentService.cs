@@ -43,5 +43,10 @@ namespace Global.Services.Service
         {
             _contentdao.makelink(link);
         }
+
+        public IList<Quiz> GetQuizzesByContentId(int id)
+        {
+           return _contentdao.GetQuizzesByContentId(id);
+        }
     }
 }
