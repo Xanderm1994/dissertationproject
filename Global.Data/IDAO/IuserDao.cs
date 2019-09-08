@@ -12,5 +12,7 @@ namespace Global.Data.IDAO
         IList<AspNetUser> GetUsers();
 
         string GetUserIdForUserName(string username);
+        IList<Score> GetAllScoresForAllUsers(string userid);
+        IList<Score> GetQuizScoresForUserId(string userid, int quizid);
     }
 }

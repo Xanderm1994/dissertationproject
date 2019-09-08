@@ -29,6 +29,13 @@ namespace Global.Services.Service
 
             return userid;
         }
-
+        public IList<Score> GetAllScoresForAllUsers(string userid)
+        {
+            return _userdao.GetAllScoresForAllUsers(userid);
+        }
+        public IList<Score> GetQuizScoresForUserId(string userid, int quizid)
+        {
+            return _userdao.GetQuizScoresForUserId(userid, quizid);
+        }
     }
 }

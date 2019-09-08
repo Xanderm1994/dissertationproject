@@ -34,5 +34,22 @@ namespace Global.Data.DAO
             return userid.First();
 
         }
+        public IList<Score> GetAllScoresForAllUsers(string userid)
+        {
+            IQueryable<Score> scores;
+            scores = from score in _Database.Scores where score.UserId == userid select score;
+            return scores.ToList();
+        }
+        public IList<Score> GetQuizScoresForUserId(string userid,int quizid)
+        {
+            IQueryable<Score> scores;
+            scores = from score 
+                     in _Database.Scores
+                     where score.UserId == userid
+                     where score.quizid == quizid
+                     select score;
+            return scores.ToList();
+
+        }
     }
 }

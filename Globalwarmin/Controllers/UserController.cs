@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Global.Services.IService;
 using Global.Services.Service;
+using Global.Data;
 namespace Globalwarmin.Controllers
 {
     public class UserController : Controller
@@ -91,6 +92,20 @@ namespace Globalwarmin.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult GetAllScoresForAllUsers(string userid)
+        {
+            IList<Score> scores;
+           scores = _userservice.GetAllScoresForAllUsers(userid);
+            return View(scores);
+        }
+         
+        public ActionResult GetQuizScoresForUserId(string userid, int quizid)
+        {
+            IList<Score> scores;
+            scores = _userservice.GetQuizScoresForUserId(userid, quizid);
+            return View(scores);
+
         }
     }
 }
