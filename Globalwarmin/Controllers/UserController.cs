@@ -6,15 +6,20 @@ using System.Web.Mvc;
 using Global.Services.IService;
 using Global.Services.Service;
 using Global.Data;
+using Globalwarmin.ViewModels;
+
 namespace Globalwarmin.Controllers
 {
     public class UserController : Controller
     {
         private IUserService _userservice;
+        private IQuizService _quizservice;
 
         public UserController()
         {
             _userservice = new UserService();
+            _quizservice = new QuizService();
+
         }
         // GET: User
         public ActionResult Index()
@@ -97,14 +102,40 @@ namespace Globalwarmin.Controllers
         {
             IList<Score> scores;
            scores = _userservice.GetAllScoresForAllUsers(userid);
-            return View(scores);
+            IList<HighScoresViewModel> viewModelList = new List<HighScoresViewModel>();
+
+            foreach (Score score in scores)
+            {
+                HighScoresViewModel viewModel = new HighScoresViewModel()
+                {
+                    Score = score.Score1,
+                    UserName = _userservice.GetUserByID(score.UserId).UserName.Split('@')[0],
+                    QuizName = _quizservice.GetQuizById(score.quizid).Title,
+                    Date = score.DateTime
+                };
+                viewModelList.Add(viewModel);
+            }
+            return View(viewModelList);
         }
-         
-        public ActionResult GetQuizScoresForUserId(string userid, int quizid)
+
+        public ActionResult GetQuizScoresForUserId(int id)
         {
             IList<Score> scores;
-            scores = _userservice.GetQuizScoresForUserId(userid, quizid);
-            return View(scores);
+            scores = _userservice.GetQuizScoresForUserId(_userservice.GetUserIdForUserName(User.Identity.Name),id);
+            IList<HighScoresViewModel> viewModelList = new List<HighScoresViewModel>();
+
+            foreach (Score score in scores)
+            {
+                HighScoresViewModel viewModel = new HighScoresViewModel()
+                {
+                    Score = score.Score1,
+                    UserName = _userservice.GetUserByID(score.UserId).UserName.Split('@')[0],
+                    QuizName = _quizservice.GetQuizById(score.quizid).Title,
+                    Date = score.DateTime
+                };
+                viewModelList.Add(viewModel);
+            }
+            return View(viewModelList);
 
         }
     }

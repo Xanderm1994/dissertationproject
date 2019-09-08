@@ -368,6 +368,8 @@
     <Content Include="Views\Quiz\Delete.cshtml" />
     <Content Include="Views\Content\GetQuizzesByContentId.cshtml" />
     <Content Include="Views\Quiz\ShowHighScoresForQuizID.cshtml" />
+    <Content Include="Views\User\GetAllScoresForAllUsers.cshtml" />
+    <Content Include="Views\User\GetQuizScoresForUserId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
