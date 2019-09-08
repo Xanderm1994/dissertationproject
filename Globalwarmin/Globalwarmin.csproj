@@ -271,6 +271,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ManageContentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -357,6 +358,7 @@
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Content\TopicList.cshtml" />
     <Content Include="Views\Content\ViewContent.cshtml" />
+    <Content Include="Views\Content\Manage.cshtml" />
     <Content Include="Views\Quiz\Details.cshtml" />
     <Content Include="Views\Quiz\Edit.cshtml" />
   </ItemGroup>

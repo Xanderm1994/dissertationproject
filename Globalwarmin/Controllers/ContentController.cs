@@ -6,16 +6,20 @@ using System.Web.Mvc;
 using Global.Services.IService;
 using Global.Services.Service;
 using Global.Data;
+using Globalwarmin;
+using Globalwarmin.ViewModels;
 
 namespace Globalwarmin.Controllers
 {
     public class ContentController : Controller
     {
         private IContentService _ContentService;
+        private IQuizService _QuizService;
 
         public ContentController()
         {
             _ContentService = new ContentService();
+            _QuizService = new QuizService();
         }
         public ActionResult Index()
         {
@@ -55,26 +59,37 @@ namespace Globalwarmin.Controllers
             }
         }
 
-        // GET: Content/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Content/Manage/5
+        public ActionResult Manage(int id)
         {
-            return View();
+            Content getcontent;
+           getcontent = _ContentService.GetContentById(id);
+
+            Session["contentid"] = getcontent.ContentId;
+
+            ManageContentViewModel viewmodel = new ManageContentViewModel();
+            viewmodel.content = getcontent;
+            viewmodel.quizlist = _QuizService.GetQuizs();
+            return View(viewmodel);
         }
 
-        // POST: Content/Edit/5
+        // POST: Content/Manage/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Manage(ManageContentViewModel viewmodel)
         {
-            try
-            {
-                // TODO: Add update logic here
+            int contentid = (int)Session["contentid"];
+            Session["contentid"] = null;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                QuizContentLink link = viewmodel.link;
+                link.ContentId = contentid;
+                _ContentService.makelink(link);
+
+                _ContentService.UpdateContent(viewmodel.content);
+                return RedirectToAction("Index2");
             }
+            return View();
         }
 
         // GET: Content/Delete/5

@@ -13,5 +13,7 @@ namespace Global.Services.IService
         void CreateContent(Content content);
         IList<Content> GetContentAz();
         Content GetContentById(int id);
+        void UpdateContent(Content content);
+        void makelink(QuizContentLink link);
     }
 }
