@@ -35,5 +35,13 @@ namespace Global.Services.Service
         {
             return _contentdao.GetContentById(id);
         }
+        public void UpdateContent(Content content)
+        {
+            _contentdao.UpdateContent(content);
+        }
+        public void makelink(QuizContentLink link)
+        {
+            _contentdao.makelink(link);
+        }
     }
 }

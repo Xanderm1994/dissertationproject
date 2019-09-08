@@ -41,5 +41,30 @@ namespace Global.Data.DAO
             return _content.First();
         }
 
+        public void UpdateContent(Content content)
+        {
+            _Database.Entry(content).State = System.Data.Entity.EntityState.Modified;
+            _Database.SaveChanges();
+
+        }
+
+        public void makelink(QuizContentLink link)
+        {
+            link.LinkId = GetNextLinkID();
+            _Database.QuizContentLinks.Add(link);
+            _Database.SaveChanges();
+        }
+        public int GetNextLinkID()
+        {
+            IQueryable<int> id;
+
+            id = from dblink
+                 in _Database.QuizContentLinks
+                 orderby dblink.LinkId descending
+                 select dblink.LinkId;
+
+            return (id.First()) + 1;
+        }
+
     }
 }
