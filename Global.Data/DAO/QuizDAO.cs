@@ -55,5 +55,16 @@ namespace Global.Data.DAO
             id = from quiz in _Database.Quizs orderby quiz.QuizID descending select quiz.QuizID;
             return id.First() + 1;
         }
+
+        public IList<Score> GetScoresForQuizID(int id)
+        {
+            IQueryable<Score> scores;
+            scores = from score 
+                     in _Database.Scores
+                     orderby score.Score1 descending
+                     where score.quizid == id
+                     select score;
+            return scores.ToList();
+        }
     }
 }

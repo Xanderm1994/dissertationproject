@@ -6,17 +6,21 @@ using System.Web.Mvc;
 using Global.Data;
 using Global.Services.IService;
 using Global.Services.Service;
+using Globalwarmin.ViewModels;
 
 namespace Globalwarmin.Controllers
 {
     public class QuizController : Controller
     {
         private IQuizService _QuizService;
+        private IUserService _UserService;
 
         public QuizController()
         {
+            _UserService = new UserService();
             _QuizService = new QuizService();
         }
+
         // GET: Quiz
         public ActionResult Index()
         {
@@ -85,6 +89,27 @@ namespace Globalwarmin.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public ActionResult ShowHighScoresForQuizID(int id)
+        {
+            IList<Score> scores;
+            scores = _QuizService.GetScoresForQuizID(id);
+
+            IList<HighScoresViewModel> viewModelList = new List<HighScoresViewModel>();
+
+            foreach(Score score in scores)
+            {
+                HighScoresViewModel viewModel = new HighScoresViewModel()
+                {
+                    Score = score.Score1,
+                    UserName = _UserService.GetUserByID(score.UserId).UserName.Split('@')[0],
+                    QuizName = _QuizService.GetQuizById(score.quizid).Title,
+                    Date = score.DateTime
+                };
+                viewModelList.Add(viewModel);
+            }
+            return View(viewModelList);
         }
     }
 }

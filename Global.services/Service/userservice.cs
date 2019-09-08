@@ -30,5 +30,10 @@ namespace Global.Services.Service
             return userid;
         }
 
+        public AspNetUser GetUserByID(string id)
+        {
+            return _userdao.GetUserByID(id);
+        }
+
     }
 }

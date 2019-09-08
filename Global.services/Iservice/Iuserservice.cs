@@ -13,5 +13,7 @@ namespace Global.Services.IService
 
         string GetUserIdForUserName(string username);
 
+        AspNetUser GetUserByID(string id);
+
     }
 }

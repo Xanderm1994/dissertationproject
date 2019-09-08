@@ -12,5 +12,7 @@ namespace Global.Data.IDAO
         IList<AspNetUser> GetUsers();
 
         string GetUserIdForUserName(string username);
+
+        AspNetUser GetUserByID(string id);
     }
 }
