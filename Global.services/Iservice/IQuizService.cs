@@ -17,5 +17,7 @@ namespace Global.Services.IService
         void UpdateQuiz(Quiz quiz);
 
         void DeleteQuiz(int id);
+
+        IList<Score> GetScoresForQuizID(int id);
     }
 }

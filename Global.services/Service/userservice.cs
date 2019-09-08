@@ -37,5 +37,11 @@ namespace Global.Services.Service
         {
             return _userdao.GetQuizScoresForUserId(userid, quizid);
         }
+
+        public AspNetUser GetUserByID(string id)
+        {
+            return _userdao.GetUserByID(id);
+        }
+
     }
 }

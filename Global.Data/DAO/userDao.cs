@@ -51,5 +51,11 @@ namespace Global.Data.DAO
             return scores.ToList();
 
         }
+
+        public AspNetUser GetUserByID(string id)
+        {
+            IQueryable<AspNetUser> users = from user in _Database.AspNetUsers where user.Id == id select user;
+            return users.First();
+        }
     }
 }

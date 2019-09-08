@@ -42,5 +42,10 @@ namespace Global.Services.Service
         {
             _quizDAO.DeleteQuiz(id);
         }
+
+        public IList<Score> GetScoresForQuizID(int id)
+        {
+            return _quizDAO.GetScoresForQuizID(id);
+        }
     }
 }
