@@ -361,6 +361,10 @@
     <Content Include="Views\Content\Manage.cshtml" />
     <Content Include="Views\Quiz\Details.cshtml" />
     <Content Include="Views\Quiz\Edit.cshtml" />
+    <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Quiz\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

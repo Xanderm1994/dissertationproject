@@ -33,7 +33,8 @@ namespace Globalwarmin.Controllers
         // GET: Question/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Question question = _questionService.GetQuestionById(id);
+            return View(question);
         }
 
         // GET: Question/Create
@@ -59,45 +60,41 @@ namespace Globalwarmin.Controllers
         // GET: Question/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Question question = _questionService.GetQuestionById(id);
+            return View(question);
         }
 
         // POST: Question/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Question question)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                _questionService.UpdateQuestion(question);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Question/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Question question = _questionService.GetQuestionById(id);
+            return View(question);
         }
 
         // POST: Question/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
-
+                _questionService.DeleteQuestion(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
+
+
         }
         public ActionResult AskQuestion(int id)
         {

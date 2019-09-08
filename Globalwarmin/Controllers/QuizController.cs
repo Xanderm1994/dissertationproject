@@ -72,24 +72,19 @@ namespace Globalwarmin.Controllers
         // GET: Quiz/Delete/5
         public ActionResult Delete(int id)
         {
-            _QuizService.DeleteQuiz(id);
-            return RedirectToAction("Index");
+            return View(_QuizService.GetQuizById(id));
         }
 
         // POST: Quiz/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
-
+                _QuizService.DeleteQuiz(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
     }
 }

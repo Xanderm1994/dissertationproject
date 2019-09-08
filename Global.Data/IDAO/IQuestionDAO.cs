@@ -19,5 +19,9 @@ namespace Global.Data.IDAO
 
         int GetNextID();
 
+        void UpdateQuestion(Question question);
+
+        void DeleteQuestion(int id);
+
     }
 }

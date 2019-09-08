@@ -46,13 +46,23 @@ namespace Global.Data.DAO
         public int GetNextID()
         {
             IQueryable<int> id;
-
             id = from dbquestion 
                  in _database.Questions
                  orderby dbquestion.QuestionId descending
                  select dbquestion.QuestionId;
-
             return (id.First())+1;
+        }
+
+        public void UpdateQuestion(Question question)
+        {
+            _database.Entry(question).State = System.Data.Entity.EntityState.Modified;
+            _database.SaveChanges();
+        }
+
+        public void DeleteQuestion(int id)
+        {
+            Question question = GetQuestionById(id);
+            _database.Questions.Remove(question);
         }
     }
 }
