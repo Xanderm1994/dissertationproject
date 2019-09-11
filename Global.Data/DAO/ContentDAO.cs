@@ -62,7 +62,7 @@ namespace Global.Data.DAO
                  in _Database.QuizContentLinks
                  orderby dblink.LinkId descending
                  select dblink.LinkId;
-
+            if (id.ToList().Count == 0) return 0;
             return (id.First()) + 1;
         }
         public IList<Quiz> GetQuizzesByContentId(int id)

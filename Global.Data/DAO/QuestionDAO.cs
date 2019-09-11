@@ -50,6 +50,7 @@ namespace Global.Data.DAO
                  in _database.Questions
                  orderby dbquestion.QuestionId descending
                  select dbquestion.QuestionId;
+            if (id.ToList().Count == 0) return 0;
             return (id.First())+1;
         }
 

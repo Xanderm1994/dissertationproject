@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Globalwarmin
 {
+    [Authorize(Roles = "Admin")]
     public class InitAdminController : Controller
     {        
         public ApplicationDbContext db;

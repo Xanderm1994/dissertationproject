@@ -53,6 +53,10 @@ namespace Global.Data.DAO
         {
             IQueryable<int> id;
             id = from quiz in _Database.Quizs orderby quiz.QuizID descending select quiz.QuizID;
+            if (id.ToList().Count == 0)
+            {
+                return 0;
+            }
             return id.First() + 1;
         }
 

@@ -12,7 +12,6 @@ using Globalwarmin.Models;
 
 namespace Globalwarmin.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
