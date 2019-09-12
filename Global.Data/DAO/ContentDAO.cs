@@ -90,6 +90,11 @@ namespace Global.Data.DAO
             return quizzes.First();
         }
 
+        public void DeleteContent(int id)
+        {
+            _Database.Contents.Remove(GetContentById(id));
+        }
+
     }
 
 

@@ -35,7 +35,7 @@ namespace Globalwarmin.Controllers
         // GET: Content/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_ContentService.GetContentById(id));
         }
 
         // GET: Content/Create
@@ -95,23 +95,19 @@ namespace Globalwarmin.Controllers
         // GET: Content/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_ContentService.GetContentById(id));
         }
 
         // POST: Content/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            if(ModelState.IsValid)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                _ContentService.DeleteContent(id);
+                return RedirectToAction("Index2");
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         public ActionResult TopicList()

@@ -48,5 +48,10 @@ namespace Global.Services.Service
         {
            return _contentdao.GetQuizzesByContentId(id);
         }
+
+        public void DeleteContent(int id)
+        {
+            _contentdao.DeleteContent(id);
+        }
     }
 }

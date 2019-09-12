@@ -370,6 +370,7 @@
     <Content Include="Views\Quiz\ShowHighScoresForQuizID.cshtml" />
     <Content Include="Views\User\GetAllScoresForAllUsers.cshtml" />
     <Content Include="Views\User\GetQuizScoresForUserId.cshtml" />
+    <Content Include="Views\Content\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,5 +16,6 @@ namespace Global.Services.IService
         void UpdateContent(Content content);
         void makelink(QuizContentLink link);
         IList<Quiz> GetQuizzesByContentId(int id);
+        void DeleteContent(int id);
     }
 }

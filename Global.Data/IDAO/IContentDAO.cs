@@ -16,5 +16,7 @@ namespace Global.Data.IDAO
          void UpdateContent(Content content);
         void makelink(QuizContentLink link);
         IList<Quiz> GetQuizzesByContentId(int id);
+
+        void DeleteContent(int id);
     }
 }

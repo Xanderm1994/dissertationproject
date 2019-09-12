@@ -10,7 +10,6 @@ using Globalwarmin.Models;
 
 namespace Globalwarmin.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
